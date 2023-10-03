@@ -1,0 +1,16 @@
+{
+  "name": "librarycampuslands",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "type": "module",
+  "scripts": {
+    "dev": "json-server --watch ./db/db.json --port 5414 --host 127.0.14.1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "json-server": "0.17.4"
+  }
+}
