@@ -7,4 +7,16 @@ const url = `${ssl+hotname}:${port}`
 
 const urlBooks =url+"/book"
 
-getBook(urlBooks)
+
+const dataObject = {
+    "title": "The End",
+    "date": "01-15-2023",
+    "authorId": 1,
+    "categoryId": 1,
+    "editionId": 1,
+    "isbn": 456,
+    "numPaginations": 700,
+    "id": 1,
+    "imageUrl": "http://"
+  }
+getBook(dataObject)

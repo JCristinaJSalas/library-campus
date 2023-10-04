@@ -1,20 +1,18 @@
-import { isString,isNumber,isDate } from "./validations.js"
+import { isString,isNumber,isDate, isObject } from "./validations.js"
 
-export const getBook = (urlBook) => {
-  let date = new Date(dato)
-  validateFecha(date)
-  
+
+export const getBook = (dataObject) => {
+  console.log(isObject(dataObject)); 
+  const keyBook = ["title","date","authorId","categoryId","editionId","isbn","numPaginations","id"]
+
+  Object.keys(dataObject).forEach((e) => {
+    if (keyBook.includes(e)){
+       console.log(`Si incluye ${e} `)
+    }
+    else{
+      const mensaje = "El dato no esta en el objeto"
+      return console.log(mensaje)
+    }
+  })
 }
-
-const dataObject = {
-  "title": "The End",
-  "date": "01-15-2023",
-  "authorId": 1,
-  "categoryId": 1,
-  "editionId": 1,
-  "isbn": 456,
-  "numPaginations": 700,
-  "id": 1
-}
-
 
