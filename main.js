@@ -1,22 +1,12 @@
-import { getBook } from "./storge/book.js"
+import { getAllBooks, getOneBook } from "./storge/book.js";
 
-const ssl = "https://"
-const hotname = "127.0.14.1"
-const port = "5414"
-const url = `${ssl+hotname}:${port}`
+const ssl = "http://";
+const hotname = "127.0.14.1";
+const port = "5414";
+export const url = `${ssl + hotname}:${port}`;
 
-const urlBooks =url+"/book"
-
-
-const dataObject = {
-    "title": "The End",
-    "date": "01-15-2023",
-    "authorId": 1,
-    "categoryId": 1,
-    "editionId": 1,
-    "isbn": 456,
-    "numPaginations": 700,
-    "id": 1,
-    "imageUrl": "http://"
-  }
-getBook(dataObject)
+// Manejo de DB books
+const urlBooks = url + "/books";
+const id = 1;
+await getAllBooks(urlBooks);
+await getOneBook(urlBooks, id);
