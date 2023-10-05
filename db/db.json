@@ -1,39 +1,39 @@
 {
   "categories": [
     {
-      "nombre": "Drama",
+      "name": "Drama",
       "id": 1
     },
     {
-      "nombre": "Romance",
+      "name": "Romance",
       "id": 2
     },
     {
-      "nombre": "Terror",
+      "name": "Terror",
       "id": 3
     },
     {
-      "nombre": "Novela",
+      "name": "Novela",
       "id": 4
     },
     {
-      "nombre": "Aventura",
+      "name": "Aventura",
       "id": 5
     },
     {
-      "nombre": "Manga",
+      "name": "Manga",
       "id": 6
     },
     {
-      "nombre": "Biografia",
+      "name": "Biografia",
       "id": 7
     },
     {
-      "nombre": "Ciencia",
+      "name": "Ciencia",
       "id": 8
     },
     {
-      "nombre": "Cuento",
+      "name": "Cuento",
       "id": 9
     }
   ],
@@ -57,26 +57,26 @@
       "id":3
     }
   ],
-  "isStateBooks": [
+  "states": [
     {
-      "nombre": "Reparacion",
+      "name": "Reparacion",
       "descripcion":"El libro se encuentra en reparacion.",
       "id":1
     },
     {
-      "nombre": "Nuevo",
+      "name": "Nuevo",
       "descripcion":"El libro es nuevo.",
-      "id":1
+      "id":2
     },
     {
-      "nombre": "Donado",
+      "name": "Donado",
       "descripcion":"Este libro se dono.",
-      "id":1
+      "id":3
     },
     {
-      "nombre": "Prestado",
+      "name": "Prestado",
       "descripcion":"Libro no disponible.",
-      "id":1
+      "id":4
     }
   ],
   "books": [
@@ -85,21 +85,21 @@
       "date": "2016-08-30",
       "authorId": 1,
       "categoryId": 1,
-      "editionId": 1,
+      "editorialId": 1,
       "isbn": 380554,
       "numPages": 552,
-      "estadoId": 1,
+      "stateId": 1,
       "id": 1
     },
     {
       "title": "FORASTERA",
       "date": "2006-08-30",
       "authorId": 2,
-      "categoryId": 80,
-      "editionId": 1,
+      "categoryId": 2,
+      "editorialId": 1,
       "isbn": 9788418173745,
       "numPages": 764,
-      "estadoId": 1,
+      "stateId": 4,
       "id": 2
     },
     {
@@ -107,37 +107,36 @@
       "date": "2018-04-02",
       "authorId": 3,
       "categoryId": 3,
-      "editionId": 1,
+      "editorialId": 1,
       "isbn": 273059,
       "numPages": 296,
-      "estadoId": 1,
+      "stateId": 1,
       "id": 3
     },
     {
       "title": "Prometeo encadenado",
       "date": "2020-01-01",
       "authorId": 4,
-      "categoryId": 1,
-      "editionId": 1,
+      "categoryId": 2,
+      "editorialId": 1,
       "isbn": 16758,
       "numPages": 296,
-      "estadoId": 1,
+      "stateId": 3,
       "id": 4
     },{
       "title": "The End",
       "date": "01-15-2023",
       "authorId": 1,
       "categoryId": 1,
-      "editionId": 1,
+      "editorialId": 1,
       "isbn": 456,
       "numPages": 425,
+      "stateId": 4,
       "id": 5
     }
   ],
   "loads": [],
-  "reservations": [
-
-  ],
+  "reservations": [],
   "authors": [
     {
       "nombre": "Miguel",
