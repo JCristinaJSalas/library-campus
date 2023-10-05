@@ -139,27 +139,27 @@
   "reservations": [],
   "authors": [
     {
-      "nombre": "Miguel",
-      "apellido": "Castro",
-      "nacionalidad": "Europeo",
+      "name": "Miguel",
+      "lastname": "Castro",
+      "nationality": "Europeo",
       "id": 1
     },
     {
-      "nombre": "Santiago",
-      "apellido": "Marquez",
-      "nacionalidad": "Venezolano",
+      "name": "Santiago",
+      "lastname": "Marquez",
+      "nationality": "Venezolano",
       "id": 2
     },
     {
-      "nombre": "Kevin",
-      "apellido": "Esteba",
-      "nacionalidad": "Japones",
+      "name": "Kevin",
+      "lastname": "Esteba",
+      "nationality": "Japones",
       "id": 3
     },
     {
-      "nombre": "Cristian",
-      "apellido": "Pardo",
-      "nacionalidad": "Italiano",
+      "name": "Cristian",
+      "lastname": "Pardo",
+      "nationality": "Italiano",
       "id": 4
     }
   ],

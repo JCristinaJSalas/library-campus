@@ -1,3 +1,4 @@
+import { getAllAuthors, getOneAuthor, getRelationshipsAuthor } from "./storge/author.js";
 import { getAllBooks, getOneBook, getRelationshipsBook } from "./storge/book.js";
 import { getAllCategories,getOneCategory,getRelationshipsCategories } from "./storge/category.js";
 
@@ -12,15 +13,24 @@ export const url = `${ssl + hotname}:${port}`;
 // Manejo de DB books
 const urlBooks = url + "/books";
 const id = 1;
-const filtro = "atuhor"
-await getAllBooks(urlBooks);
-await getOneBook(urlBooks, id);
-awaitgetRelationshipsBook(urlBooks, filtro);
+const filtro = "author"
+let x = await getAllBooks(urlBooks);
+let y = await getOneBook(urlBooks, id);
+let z =  await getRelationshipsBook(urlBooks, filtro);
 
 
-
-//Manejo de Categories
+// Manejo de Categories
 const urlCategories = url + "/categories";
-await getAllCategories(urlCategories)
-await getOneCategory(urlCategories, id);
-console.log(await getRelationshipsCategories(urlCategories))
+//await getAllCategories(urlCategories)
+//await getOneCategory(urlCategories, id);
+//await getRelationshipsCategories(urlCategories)
+
+
+// Manejo de Autores
+//const urlAuthors = url + "/authors";
+//await getAllAuthors(urlAuthors);
+//await getOneAuthor(urlAuthors, id);
+//await getRelationshipsAuthor(urlAuthors)
+
+
+console.log("todo",x,"one",y,"rela",z);
