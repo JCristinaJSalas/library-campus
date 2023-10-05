@@ -1,10 +1,168 @@
 {
-  "category": [],
-  "editorial": [],
-  "isStateBook": [],
-  "book": [],
+  "categories": [
+    {
+      "nombre": "Drama",
+      "id": 1
+    },
+    {
+      "nombre": "Romance",
+      "id": 2
+    },
+    {
+      "nombre": "Terror",
+      "id": 3
+    },
+    {
+      "nombre": "Novela",
+      "id": 4
+    },
+    {
+      "nombre": "Aventura",
+      "id": 5
+    },
+    {
+      "nombre": "Manga",
+      "id": 6
+    },
+    {
+      "nombre": "Biografia",
+      "id": 7
+    },
+    {
+      "nombre": "Ciencia",
+      "id": 8
+    },
+    {
+      "nombre": "Cuento",
+      "id": 9
+    }
+  ],
+  "editorials": [
+    {
+      "nombre":"Editorial LibroVivo",
+      "direccion":"Calle de los Libros 123, Ciudad Librería, País de las Letras",
+      "telefono":  1234567890,
+      "id":1
+    },
+    {
+      "nombre":"Editorial Escribarte",
+      "direccion":"Avenida de las Palabras 456, Ciudad de la Imaginación, Tierra de los Sueños",
+      "telefono":  9876543210,
+      "id":2
+    },
+    {
+      "nombre":"Editorial Páginas Doradas",
+      "direccion":" Plaza de los Libros 789, Ciudad Literaria, Mundo de la Literatura",
+      "telefono":  5551234567,
+      "id":3
+    }
+  ],
+  "isStateBooks": [
+    {
+      "nombre": "Reparacion",
+      "descripcion":"El libro se encuentra en reparacion.",
+      "id":1
+    },
+    {
+      "nombre": "Nuevo",
+      "descripcion":"El libro es nuevo.",
+      "id":1
+    },
+    {
+      "nombre": "Donado",
+      "descripcion":"Este libro se dono.",
+      "id":1
+    },
+    {
+      "nombre": "Prestado",
+      "descripcion":"Libro no disponible.",
+      "id":1
+    }
+  ],
+  "books": [
+    {
+      "title": "El olor del miedo",
+      "date": "2016-08-30",
+      "authorId": 1,
+      "categoryId": 1,
+      "editionId": 1,
+      "isbn": 380554,
+      "numPages": 552,
+      "estadoId": 1,
+      "id": 1
+    },
+    {
+      "title": "FORASTERA",
+      "date": "2006-08-30",
+      "authorId": 2,
+      "categoryId": 80,
+      "editionId": 1,
+      "isbn": 9788418173745,
+      "numPages": 764,
+      "estadoId": 1,
+      "id": 2
+    },
+    {
+      "title": "Valle de la calma",
+      "date": "2018-04-02",
+      "authorId": 3,
+      "categoryId": 3,
+      "editionId": 1,
+      "isbn": 273059,
+      "numPages": 296,
+      "estadoId": 1,
+      "id": 3
+    },
+    {
+      "title": "Prometeo encadenado",
+      "date": "2020-01-01",
+      "authorId": 4,
+      "categoryId": 1,
+      "editionId": 1,
+      "isbn": 16758,
+      "numPages": 296,
+      "estadoId": 1,
+      "id": 4
+    },{
+      "title": "The End",
+      "date": "01-15-2023",
+      "authorId": 1,
+      "categoryId": 1,
+      "editionId": 1,
+      "isbn": 456,
+      "numPages": 425,
+      "id": 5
+    }
+  ],
   "loads": [],
-  "reservation": [],
-  "author": [],
-  "user": []
+  "reservations": [
+
+  ],
+  "authors": [
+    {
+      "nombre": "Miguel",
+      "apellido": "Castro",
+      "nacionalidad": "Europeo",
+      "id": 1
+    },
+    {
+      "nombre": "Santiago",
+      "apellido": "Marquez",
+      "nacionalidad": "Venezolano",
+      "id": 2
+    },
+    {
+      "nombre": "Kevin",
+      "apellido": "Esteba",
+      "nacionalidad": "Japones",
+      "id": 3
+    },
+    {
+      "nombre": "Cristian",
+      "apellido": "Pardo",
+      "nacionalidad": "Italiano",
+      "id": 4
+    }
+  ],
+  "users": []
 }
