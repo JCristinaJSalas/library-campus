@@ -103,3 +103,26 @@ export const objectBooks = (dataObject) => {
   const respuesta = keyBook.every((key) => keys.includes(key)) ? objectNew : mensajeNoCompleto;
   return respuesta;
 };
+export const objectCategories =(dataObject) => {
+  const objectNew = {};
+  const keyBook = [
+    "name",
+    "id"
+  ];
+  Object.entries(dataObject).forEach((data) => {
+    data[0] === "name"
+        ? isString(data[1])
+          ? (objectNew[data[0]] = data[1])
+          :  false
+        : "";
+    data[0] === "id"
+        ? isNumber(data[1])
+          ? (objectNew[data[0]] = data[1])
+          :  false
+        : "";
+  });
+  const keys = Object.keys(objectNew);
+  const mensajeNoCompleto = { status: 400, message: `El objeto no esta completo` };
+  const respuesta = keyBook.every((key) => keys.includes(key)) ? objectNew : mensajeNoCompleto;
+  return respuesta;
+}
