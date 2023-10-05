@@ -18,3 +18,13 @@ export const getOneBook = async (urlBooks, id) => {
   //console.log(res)
   return res;
 };
+
+// request 
+// http://127.0.14.1:5414/books?_expand=author
+//http://127.0.14.1:5414/books?_expand=category
+export const getRelationshipsBook =  async (urlBooks,filtro) =>{
+  const urlFiltro = urlBooks + "?_expand=" + filtro
+  console.log(urlFiltro)
+  const bookJson = await (await fetch(urlFiltro)).json();
+  return bookJson
+}
