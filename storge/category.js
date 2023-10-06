@@ -1,5 +1,8 @@
 import { isObject, objectCategories } from "./validations.js";
-const config = {method: undefined, headers: {"Content-Type": "application/json"}};
+const config = {
+  method: undefined,
+  headers: { "Content-Type": "application/json" },
+};
 
 export const getAllCategories = async (urlCategories) => {
   const dataCategoriesJson = await (await fetch(urlCategories)).json();
@@ -22,20 +25,22 @@ export const getRelationshipsCategories = async (urlCategories) => {
 //----------------**--------------------
 //-----------  POST  -------------------
 
-export const postCategory = (urlCategories, objeto) => {
-  console.log(objeto)
-  if (isObject(objeto)) {
-    return objectCategories(objeto);
-  } else {
-    console.log("aqui", objeto);
-    // Agregar lógica adicional si objeto no es un objeto válido
-    return {
-      status: 400,
-      message: `El objeto no es válido`,
-    };
+export const postCategory = async (urlCategories, objeto) => {
+  console.log(objectCategories(objeto))
+ 
+  if (isObject(objeto) && objectCategories(objeto)) {
+    console.log(urlCategories);
+    console.log(objeto);
+    config.method = "POST";
+    config.body = JSON.stringify(objeto);
+    await(await fetch(urlCategories, config)).json()
+    console.log("Se guardo");
   }
-
-  config.method = "POST"
-  config.body = JSON.stringify(objeto)
-
-}
+  else{
+    const mensajeNoEnvio = {
+      status: 400,
+      message: `Problemas al guardar`,
+    };
+    console.error(mensajeNoEnvio.message);
+  }
+};

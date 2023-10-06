@@ -1,28 +1,38 @@
-export const isString = (dato) => {
-  const mensajeString = {
+const mensajeString = {
+  status: 400,
+  message: "El dato no es un string. :(",
+};
+
+const mensajeNumber = {
+  status: 400,
+  message: `El dato no es un numero. :(`,
+};
+
+const mensajeDate = {
     status: 400,
-    message: `El dato no es un string, es un ${dato.constructor.name}`,
+    message: `El dato no es una fecha. :(`,
   };
-  const resString =
-    typeof dato === "string" ? true : console.log(mensajeString);
-  return resString;
+
+export const isString = (dato) => {
+  if (typeof dato === "string") {
+    return true;
+  } else {
+    console.error(mensajeString.message);
+    return false;
+  }
 };
 
 export const isNumber = (dato) => {
-  const mensajeNumber = {
-    status: 400,
-    message: `El dato no es un numero, es un ${typeof dato}`,
-  };
-  const resNumber =
-    typeof dato === "number" ? true : console.log(mensajeNumber);
-  return resNumber;
+  if (typeof dato === "number") {
+    return true;
+  } else {
+    console.error(mensajeNumber.message);
+    return false;
+  }
 };
 
 export const isDate = (dato) => {
-  const mensajeDate = {
-    status: 400,
-    message: `El dato no es una fecha, es un ${typeof dato}`,
-  };
+
   const resDate =
     dato.constructor.name === "Date" ? true : console.log(mensajeDate);
   return resDate;
@@ -93,7 +103,7 @@ export const objectBooks = (dataObject) => {
         ? (objectNew[data[0]] = data[1])
         : false
       : "";
-      data[0] === "stateId"
+    data[0] === "stateId"
       ? isNumber(data[1])
         ? (objectNew[data[0]] = data[1])
         : false
@@ -129,23 +139,27 @@ export const objectCategories = (dataObject) => {
 
   for (const [key, value] of Object.entries(dataObject)) {
     if (key === "name") {
-      if (isString(value) && value.length !== "") {
+      if (isString(value) && value.length > 0) {
         objectNew[key] = value;
       } else {
         console.error(mensajeVacio.message);
+        return false;
       }
     } else if (key === "id") {
       if (isNumber(value)) {
         objectNew[key] = value;
       } else {
-        return mensajeNoCompleto;
+        console.error(mensajeNoCompleto.message);
+        return false;
       }
     }
   }
 
   const keys = Object.keys(objectNew);
 
-  return keyBook.every((key) => keys.includes(key)) ? objectNew : mensajeNoCompleto;
+  return keyBook.every((key) => keys.includes(key))
+    ? objectNew
+    : mensajeNoCompleto;
 };
 
 export const objectAuthors = (dataObject) => {

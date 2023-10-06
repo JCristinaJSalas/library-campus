@@ -31,49 +31,52 @@
     {
       "name": "Ciencia",
       "id": 8
+    },
+    {
+      "name": "Cuento",
+      "id": 9
     }
-
   ],
   "editorials": [
     {
-      "name":"Editorial LibroVivo",
-      "address":"Calle de los Libros 123, Ciudad Librería, País de las Letras",
-      "phoneNumber":  "1234567890",
-      "id":1
+      "name": "Editorial LibroVivo",
+      "address": "Calle de los Libros 123, Ciudad Librería, País de las Letras",
+      "phoneNumber": "1234567890",
+      "id": 1
     },
     {
-      "name":"Editorial Escribarte",
-      "address":"Avenida de las Palabras 456, Ciudad de la Imaginación, Tierra de los Sueños",
-      "phoneNumber":  "9876543210",
-      "id":2
+      "name": "Editorial Escribarte",
+      "address": "Avenida de las Palabras 456, Ciudad de la Imaginación, Tierra de los Sueños",
+      "phoneNumber": "9876543210",
+      "id": 2
     },
     {
-      "name":"Editorial Páginas Doradas",
-      "address":" Plaza de los Libros 789, Ciudad Literaria, Mundo de la Literatura",
-      "phoneNumber":  "5551234567",
-      "id":3
+      "name": "Editorial Páginas Doradas",
+      "address": " Plaza de los Libros 789, Ciudad Literaria, Mundo de la Literatura",
+      "phoneNumber": "5551234567",
+      "id": 3
     }
   ],
   "states": [
     {
       "name": "Reparacion",
-      "description":"El libro se encuentra en reparacion.",
-      "id":1
+      "description": "El libro se encuentra en reparacion.",
+      "id": 1
     },
     {
       "name": "Nuevo",
-      "description":"El libro es nuevo.",
-      "id":2
+      "description": "El libro es nuevo.",
+      "id": 2
     },
     {
       "name": "Donado",
-      "description":"Este libro se dono.",
-      "id":3
+      "description": "Este libro se dono.",
+      "id": 3
     },
     {
       "name": "Prestado",
-      "description":"Libro no disponible.",
-      "id":4
+      "description": "Libro no disponible.",
+      "id": 4
     }
   ],
   "books": [
@@ -120,7 +123,8 @@
       "numPages": 296,
       "stateId": 3,
       "id": 4
-    },{
+    },
+    {
       "title": "The End",
       "date": "01-15-2023",
       "authorId": 1,

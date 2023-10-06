@@ -41,15 +41,14 @@ let z = await getRelationshipsBook(urlBooks, filtro);
 
 // Manejo de Categories
 const urlCategories = url + "/categories";
-const objeto = {
-  id: 9,
-};
+
 
 let a = await getAllCategories(urlCategories);
 let b = await getOneCategory(urlCategories, id);
 let c = await getRelationshipsCategories(urlCategories);
-let ba =await postCategory(urlCategories, objeto);
-console.log("main", ba)
+//let ba =await postCategory(urlCategories, objeto);
+
+
 // Manejo de Autores
 const urlAuthors = url + "/authors";
 let f = await getAllAuthors(urlAuthors);
