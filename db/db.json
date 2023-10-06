@@ -39,43 +39,43 @@
   ],
   "editorials": [
     {
-      "nombre":"Editorial LibroVivo",
-      "direccion":"Calle de los Libros 123, Ciudad Librería, País de las Letras",
-      "telefono":  1234567890,
+      "name":"Editorial LibroVivo",
+      "address":"Calle de los Libros 123, Ciudad Librería, País de las Letras",
+      "phoneNumber":  "1234567890",
       "id":1
     },
     {
-      "nombre":"Editorial Escribarte",
-      "direccion":"Avenida de las Palabras 456, Ciudad de la Imaginación, Tierra de los Sueños",
-      "telefono":  9876543210,
+      "name":"Editorial Escribarte",
+      "address":"Avenida de las Palabras 456, Ciudad de la Imaginación, Tierra de los Sueños",
+      "phoneNumber":  "9876543210",
       "id":2
     },
     {
-      "nombre":"Editorial Páginas Doradas",
-      "direccion":" Plaza de los Libros 789, Ciudad Literaria, Mundo de la Literatura",
-      "telefono":  5551234567,
+      "name":"Editorial Páginas Doradas",
+      "address":" Plaza de los Libros 789, Ciudad Literaria, Mundo de la Literatura",
+      "phoneNumber":  "5551234567",
       "id":3
     }
   ],
   "states": [
     {
       "name": "Reparacion",
-      "descripcion":"El libro se encuentra en reparacion.",
+      "description":"El libro se encuentra en reparacion.",
       "id":1
     },
     {
       "name": "Nuevo",
-      "descripcion":"El libro es nuevo.",
+      "description":"El libro es nuevo.",
       "id":2
     },
     {
       "name": "Donado",
-      "descripcion":"Este libro se dono.",
+      "description":"Este libro se dono.",
       "id":3
     },
     {
       "name": "Prestado",
-      "descripcion":"Libro no disponible.",
+      "description":"Libro no disponible.",
       "id":4
     }
   ],
