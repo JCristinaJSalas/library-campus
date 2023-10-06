@@ -118,27 +118,34 @@ export const objectBooks = (dataObject) => {
 export const objectCategories = (dataObject) => {
   const objectNew = {};
   const keyBook = ["name", "id"];
-  Object.entries(dataObject).map((data) => {
-    data[0] === "name"
-      ? isString(data[1])
-        ? (objectNew[data[0]] = data[1])
-        : false
-      : "";
-    data[0] === "id"
-      ? isNumber(data[1])
-        ? (objectNew[data[0]] = data[1])
-        : false
-      : "";
-  });
-  const keys = Object.keys(objectNew);
+  const mensajeVacio = {
+    status: 400,
+    message: `El nombre está vacío`,
+  };
   const mensajeNoCompleto = {
     status: 400,
-    message: `El objeto no esta completo`,
+    message: `El objeto no está completo`,
   };
-  const respuesta = keyBook.every((key) => keys.includes(key))
-    ? objectNew
-    : mensajeNoCompleto;
-  return respuesta;
+
+  for (const [key, value] of Object.entries(dataObject)) {
+    if (key === "name") {
+      if (isString(value) && value.length !== "") {
+        objectNew[key] = value;
+      } else {
+        console.error(mensajeVacio.message);
+      }
+    } else if (key === "id") {
+      if (isNumber(value)) {
+        objectNew[key] = value;
+      } else {
+        return mensajeNoCompleto;
+      }
+    }
+  }
+
+  const keys = Object.keys(objectNew);
+
+  return keyBook.every((key) => keys.includes(key)) ? objectNew : mensajeNoCompleto;
 };
 
 export const objectAuthors = (dataObject) => {

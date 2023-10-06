@@ -12,6 +12,7 @@ import {
   getAllCategories,
   getOneCategory,
   getRelationshipsCategories,
+  postCategory,
 } from "./storge/category.js";
 import {
   getAllEditorials,
@@ -40,10 +41,15 @@ let z = await getRelationshipsBook(urlBooks, filtro);
 
 // Manejo de Categories
 const urlCategories = url + "/categories";
+const objeto = {
+  id: 9,
+};
+
 let a = await getAllCategories(urlCategories);
 let b = await getOneCategory(urlCategories, id);
 let c = await getRelationshipsCategories(urlCategories);
-
+let ba =await postCategory(urlCategories, objeto);
+console.log("main", ba)
 // Manejo de Autores
 const urlAuthors = url + "/authors";
 let f = await getAllAuthors(urlAuthors);
@@ -62,10 +68,10 @@ let q = await getAllStates(urlStates);
 let l = await getOneState(urlStates, id);
 let m = await getRelationshipsStates(urlStates);
 
-console.log("Categorias---------------");
+/*console.log("Categorias---------------");
 console.log("todo", a, "one", b, "rela", c);
 
-/* console.log("Libros---------------");
+ console.log("Libros---------------");
 console.log("todo",x,"one",y,"rela",z);
 
 console.log("Autores--------------");
