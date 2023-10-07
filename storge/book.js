@@ -19,3 +19,50 @@ export const getRelationshipsBook = async (urlBooks, filtro) => {
   const urlFiltro = urlBooks + "?_expand=" + filtro;
   return await (await fetch(urlFiltro)).json();
 };
+
+//----------------**--------------------
+//-----------  POST  -------------------
+
+export const postBook = async (urlBooks, objeto) => {
+  if (isObject(objeto) && objectBooks(objeto)) {
+    config.method = "POST";
+    config.body = JSON.stringify(objeto);
+    await (await fetch(urlBooks, config)).json();
+    console.log("Se guardo");
+  } else {
+    const mensajeNoEnvio = {
+      status: 400,
+      message: `Problemas al guardar`,
+    };
+    console.error(mensajeNoEnvio.message);
+  }
+};
+
+//----------------**--------------------
+//-----------  PUT  -------------------
+export const putBook = async (urlBooks, objeto, id) => {
+  if (isObject(objeto) && objectBooks(objeto)) {
+    config.method = "PUT";
+    config.body = JSON.stringify(objeto);
+    await (await fetch(`${urlBooks}/${id}`, config)).json();
+    console.log("Se cambio");
+  } else {
+    const mensajeNoEnvio = {
+      status: 400,
+      message: `Problemas al Editar`,
+    };
+    console.error(mensajeNoEnvio.message);
+  }
+};
+
+//----------------**--------------------
+//-----------  DELETE  -------------------
+export const deleteBook = async (urlBooks, id) => {
+  try {
+    config.method = "DELETE";
+    await (await fetch(`${urlBooks}/${id}`, config)).json();
+    console.log("Se Borro");
+  } catch (error) {
+    console.error(error);
+  }
+};

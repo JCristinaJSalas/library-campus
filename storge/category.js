@@ -26,21 +26,45 @@ export const getRelationshipsCategories = async (urlCategories) => {
 //-----------  POST  -------------------
 
 export const postCategory = async (urlCategories, objeto) => {
-  console.log(objectCategories(objeto))
- 
   if (isObject(objeto) && objectCategories(objeto)) {
-    console.log(urlCategories);
-    console.log(objeto);
     config.method = "POST";
     config.body = JSON.stringify(objeto);
-    await(await fetch(urlCategories, config)).json()
+    await (await fetch(urlCategories, config)).json();
     console.log("Se guardo");
-  }
-  else{
+  } else {
     const mensajeNoEnvio = {
       status: 400,
       message: `Problemas al guardar`,
     };
     console.error(mensajeNoEnvio.message);
+  }
+};
+
+//----------------**--------------------
+//-----------  PUT  -------------------
+export const putCategory = async (urlCategories, objeto, id) => {
+  if (isObject(objeto) && objectCategories(objeto)) {
+    config.method = "PUT";
+    config.body = JSON.stringify(objeto);
+    await (await fetch(`${urlCategories}/${id}`, config)).json();
+    console.log("Se cambio");
+  } else {
+    const mensajeNoEnvio = {
+      status: 400,
+      message: `Problemas al Editar`,
+    };
+    console.error(mensajeNoEnvio.message);
+  }
+};
+
+//----------------**--------------------
+//-----------  DELETE  -------------------
+export const deleteCategory = async (urlCategories, id) => {
+  try {
+    config.method = "DELETE";
+    await (await fetch(`${urlCategories}/${id}`, config)).json();
+    console.log("Se Borro");
+  } catch (error) {
+    console.error(error);
   }
 };
