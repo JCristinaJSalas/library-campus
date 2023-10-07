@@ -1,22 +1,11 @@
-const mensajeString = {
-  status: 400,
-  message: "El dato no es un string. :(",
-};
-
-const mensajeNumber = {
-  status: 400,
-  message: `El dato no es un numero. :(`,
-};
-
-const mensajeDate = {
-    status: 400,
-    message: `El dato no es una fecha. :(`,
-  };
-
 export const isString = (dato) => {
   if (typeof dato === "string") {
     return true;
   } else {
+    const mensajeString = {
+      status: 400,
+      message: ` El dato no es un string. :(. el dato es un ${dato.constructor.name}`,
+    };
     console.error(mensajeString.message);
     return false;
   }
@@ -26,32 +15,63 @@ export const isNumber = (dato) => {
   if (typeof dato === "number") {
     return true;
   } else {
+    const mensajeNumber = {
+      status: 400,
+      message: ` El dato no es un numero. :(. el dato es un ${dato.constructor.name}`,
+    };
     console.error(mensajeNumber.message);
     return false;
   }
 };
 
 export const isDate = (dato) => {
+  const dateFormat1 = /^\d{4}-\d{2}-\d{2}$/;
+  const dateFormat2 = /^\d{2}-\d{2}-\d{4}$/;
 
-  const resDate =
-    dato.constructor.name === "Date" ? true : console.log(mensajeDate);
-  return resDate;
+  return !isString(dato) === true
+    ? false
+    : dateFormat1.test(dato) || dateFormat2.test(dato)
+    ? (function () {
+        const newDato = new Date(dato);
+        if (isNaN(newDato.getTime())) {
+          const mensajeDate2 = {
+            status: 400,
+            message: `La fecha es inválida.`,
+          };
+          console.error(mensajeDate2.message);
+          return false;
+        } else {
+          return true;
+        }
+      })()
+    : (function () {
+        const mensajeDate3 = {
+          status: 400,
+          message: `El dato no tiene ninguno de los formatos permitidos. (yyyy-mm-dd) o (dd-mm-yyyy)`,
+        };
+        console.error(mensajeDate3.message);
+        return false;
+      })();
 };
 
 export const isObject = (dato) => {
   const mensajeObject = {
     status: 400,
-    message: `El dato no es una objeto, es un ${typeof dato}`,
+    message: `El dato no es un objeto, es de tipo ${typeof dato}`,
   };
-  const mensajeVacio = { status: 400, message: `El objeto esta vacio` };
+  const mensajeVacio = { status: 400, message: `El objeto está vacío` };
 
-  const resultado =
-    typeof dato !== "object"
-      ? console.log(mensajeObject)
-      : Object.keys(dato).length === 0
-      ? console.log(mensajeVacio)
-      : true;
-  return resultado;
+  if (typeof dato !== "object") {
+    console.error(mensajeObject.message);
+    return false;
+  }
+
+  if (Object.keys(dato).length === 0) {
+    console.error(mensajeVacio.message);
+    return false;
+  }
+
+  return true;
 };
 
 export const objectBooks = (dataObject) => {
@@ -127,7 +147,7 @@ export const objectBooks = (dataObject) => {
 
 export const objectCategories = (dataObject) => {
   const objectNew = {};
-  const keyBook = ["name", "id"];
+  const keyBook = ["name"];
   const mensajeVacio = {
     status: 400,
     message: `El nombre está vacío`,
@@ -145,13 +165,6 @@ export const objectCategories = (dataObject) => {
         console.error(mensajeVacio.message);
         return false;
       }
-    } else if (key === "id") {
-      if (isNumber(value)) {
-        objectNew[key] = value;
-      } else {
-        console.error(mensajeNoCompleto.message);
-        return false;
-      }
     }
   }
 
@@ -164,7 +177,7 @@ export const objectCategories = (dataObject) => {
 
 export const objectAuthors = (dataObject) => {
   const objectNew = {};
-  const keyBook = ["name", "lastname", "nationality", "id"];
+  const keyBook = ["name", "lastname", "nationality"];
   Object.entries(dataObject).map((data) => {
     data[0] === "name"
       ? isString(data[1])
@@ -178,11 +191,6 @@ export const objectAuthors = (dataObject) => {
       : "";
     data[0] === "nationality"
       ? isString(data[1])
-        ? (objectNew[data[0]] = data[1])
-        : false
-      : "";
-    data[0] === "id"
-      ? isNumber(data[1])
         ? (objectNew[data[0]] = data[1])
         : false
       : "";
@@ -200,7 +208,7 @@ export const objectAuthors = (dataObject) => {
 
 export const objectEditorials = (dataObject) => {
   const objectNew = {};
-  const keyBook = ["name", "address", "phoneNumber", "id"];
+  const keyBook = ["name", "address", "phoneNumber"];
   Object.entries(dataObject).map((data) => {
     data[0] === "name"
       ? isString(data[1])
@@ -214,11 +222,6 @@ export const objectEditorials = (dataObject) => {
       : "";
     data[0] === "phoneNumber"
       ? isString(data[1])
-        ? (objectNew[data[0]] = data[1])
-        : false
-      : "";
-    data[0] === "id"
-      ? isNumber(data[1])
         ? (objectNew[data[0]] = data[1])
         : false
       : "";
@@ -236,7 +239,7 @@ export const objectEditorials = (dataObject) => {
 
 export const objectStates = (dataObject) => {
   const objectNew = {};
-  const keyBook = ["name", "description", "id"];
+  const keyBook = ["name", "description"];
   Object.entries(dataObject).map((data) => {
     data[0] === "name"
       ? isString(data[1])
@@ -245,11 +248,6 @@ export const objectStates = (dataObject) => {
       : "";
     data[0] === "description"
       ? isString(data[1])
-        ? (objectNew[data[0]] = data[1])
-        : false
-      : "";
-    data[0] === "id"
-      ? isNumber(data[1])
         ? (objectNew[data[0]] = data[1])
         : false
       : "";
