@@ -79,6 +79,7 @@ export const objectBooks = (dataObject) => {
   const keyBook = [
     "title",
     "date",
+    "urlImg",
     "authorId",
     "categoryId",
     "editorialId",
@@ -94,7 +95,12 @@ export const objectBooks = (dataObject) => {
         : false
       : "";
     data[0] === "date"
-      ? isDate(new Date(data[1]))
+      ? isString(data[1])
+        ? (objectNew[data[0]] = data[1])
+        : false
+      : "";
+    data[0] === "urlImg"
+      ? isString(data[1])
         ? (objectNew[data[0]] = data[1])
         : false
       : "";
@@ -147,7 +153,7 @@ export const objectBooks = (dataObject) => {
 
 export const objectCategories = (dataObject) => {
   const objectNew = {};
-  const keyBook = ["name"];
+  const keyBook = ["name","icon"];
   const mensajeVacio = {
     status: 400,
     message: `El nombre está vacío`,
@@ -158,7 +164,7 @@ export const objectCategories = (dataObject) => {
   };
 
   for (const [key, value] of Object.entries(dataObject)) {
-    if (key === "name") {
+    if ((key === "name")||(key === "icon")) {
       if (isString(value) && value.length > 0) {
         objectNew[key] = value;
       } else {
@@ -177,7 +183,7 @@ export const objectCategories = (dataObject) => {
 
 export const objectAuthors = (dataObject) => {
   const objectNew = {};
-  const keyBook = ["name", "lastname", "nationality"];
+  const keyBook = ["name", "lastname", "nationality","urlImg"];
   Object.entries(dataObject).map((data) => {
     data[0] === "name"
       ? isString(data[1])
@@ -189,11 +195,17 @@ export const objectAuthors = (dataObject) => {
         ? (objectNew[data[0]] = data[1])
         : false
       : "";
-    data[0] === "nationality"
+      data[0] === "nationality"
       ? isString(data[1])
         ? (objectNew[data[0]] = data[1])
         : false
       : "";
+      data[0] === "urlImg"
+      ? isString(data[1])
+        ? (objectNew[data[0]] = data[1])
+        : false
+      : "";
+
   });
   const keys = Object.keys(objectNew);
   const mensajeNoCompleto = {

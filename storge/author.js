@@ -1,4 +1,8 @@
 import { isObject, objectAuthors } from "./validations.js";
+const config = {
+  method: undefined,
+  headers: { "Content-Type": "application/json" },
+};
 
 export const getAllAuthors = async (urlAuthors) => {
   const dataAuthorJson = await (await fetch(urlAuthors)).json();
@@ -64,3 +68,23 @@ export const deleteAuthor = async (urlAuthors, id) => {
     console.error(error);
   }
 };
+
+
+const contenedorAutoresInfo = document.querySelector(".contenedorAutoresInfo")
+export const mostrarAutores = async(urlAuthor) => {
+  const autores = await getAllAuthors(urlAuthor)
+  autores.map((categoria) => {
+    contenedorAutoresInfo.insertAdjacentHTML("beforeend",`
+    <div class="contenedorAutor">
+      <div class="contenedorImg">
+       <img src="${categoria.urlImg}" alt="${categoria.name}"/>
+      </div>
+      <div class="contenedorInfoAutor">
+        <h2>${categoria.name} ${categoria.lastname}</h2>
+        <h5>${categoria.nationality}</h5>
+       </div>
+    </div>
+    `
+    )
+  })
+}

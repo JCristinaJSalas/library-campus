@@ -2,59 +2,81 @@
   "categories": [
     {
       "name": "Drama",
+      "icon": "https://cdn-icons-png.flaticon.com/512/2445/2445272.png",
       "id": 1
     },
     {
-      "name": "Romance",
+      "name": "Suspenso",
+      "icon": "https://cdn-icons-png.flaticon.com/512/5228/5228292.png",
       "id": 2
     },
     {
       "name": "Terror",
+      "icon": "https://cdn-icons-png.flaticon.com/512/2589/2589413.png",
       "id": 3
     },
     {
       "name": "Novela",
+      "icon": "https://cdn-icons-png.flaticon.com/512/5526/5526427.png",
       "id": 4
     },
     {
       "name": "Aventura",
+      "icon": "https://cdn.icon-icons.com/icons2/1356/PNG/512/if-adventure-map-2913095_88801.png",
       "id": 5
     },
     {
-      "name": "Manga",
-      "id": 6
-    },
-    {
       "name": "Biografia",
+      "icon": "https://cdn-icons-png.flaticon.com/512/3079/3079112.png",
       "id": 7
     },
     {
-      "name": "Ciencia",
+      "name": "Misterio",
+      "icon": "https://cdn-icons-png.flaticon.com/512/5318/5318971.png",
       "id": 8
     },
     {
       "name": "Cuento",
+      "icon": "https://cdn-icons-png.flaticon.com/512/5305/5305040.png",
       "id": 9
     }
   ],
   "editorials": [
     {
-      "name": "Editorial LibroVivo",
-      "address": "Calle de los Libros 123, Ciudad Librería, País de las Letras",
-      "phoneNumber": "1234567890",
+      "name": "Editorial Sudamericana",
+      "address": "Humberto Primo 555, (1103) CABA",
+      "phoneNumber": "5235-4400",
       "id": 1
     },
     {
-      "name": "Editorial Escribarte",
-      "address": "Avenida de las Palabras 456, Ciudad de la Imaginación, Tierra de los Sueños",
-      "phoneNumber": "9876543210",
+      "name": "Graham's Magazine",
+      "address": "Filadelfia, Cerrada.",
+      "phoneNumber": "-----",
       "id": 2
     },
     {
-      "name": "Editorial Páginas Doradas",
-      "address": " Plaza de los Libros 789, Ciudad Literaria, Mundo de la Literatura",
-      "phoneNumber": "5551234567",
+      "name": "La Oveja Negra",
+      "address": " Cra. 14 #47 -39, Bogotá",
+      "phoneNumber": "3113492381",
       "id": 3
+    },
+    {
+      "name": "HarperCollins Publishers LLC",
+      "address": "New York, New York, United States",
+      "phoneNumber": "1800-242-7737",
+      "id": 4
+    },
+    {
+      "name": "Publicaciones y Ediciones Salamandra S.A.",
+      "address": "Barcelona, España",
+      "phoneNumber": "1800-564-7737",
+      "id": 5
+    },
+    {
+      "name": "Editorial Planeta.",
+      "address": "Av. Diagonal Barcelona - España",
+      "phoneNumber": "662-6640-8034",
+      "id": 6
     }
   ],
   "states": [
@@ -81,87 +103,163 @@
   ],
   "books": [
     {
-      "title": "El olor del miedo",
-      "date": "2016-08-30",
-      "authorId": 1,
-      "categoryId": 1,
-      "editorialId": 1,
-      "isbn": 380554,
-      "numPages": 552,
+      "title": "Harry Potter y la piedra filosofal ",
+      "date": "1997-06-26",
+      "urlImg": "https://images.cdn3.buscalibre.com/fit-in/360x360/ce/e6/cee6ef96dad70d3f599b953f0e50afc7.jpg",
+      "authorId": 5,
+      "categoryId": 4,
+      "editorialId": 2,
+      "isbn": 9788498382662,
+      "numPages": 256,
       "stateId": 1,
       "id": 1
     },
     {
-      "title": "FORASTERA",
-      "date": "2006-08-30",
-      "authorId": 2,
-      "categoryId": 2,
+      "title": "Cien años de soledad",
+      "date": "1967-06-05",
+      "urlImg": "https://www.penguinlibros.com/co/1694229/cien-anos-de-soledad-edicion-ilustrada.jpg",
+      "authorId": 1,
+      "categoryId": 4,
       "editorialId": 1,
-      "isbn": 9788418173745,
-      "numPages": 764,
-      "stateId": 4,
+      "isbn": 9780307350411,
+      "numPages": 471,
+      "stateId": 1,
+      "id": 6
+    },
+    {
+      "title": "Los asesinatos de la calle Morgue",
+      "date": "1841-04-20",
+      "urlImg": "https://images.cdn2.buscalibre.com/fit-in/520x520/d0/f2/d0f279ac2daa7ccd25be2eecfce6132e.jpg",
+      "authorId": 2,
+      "categoryId": 8,
+      "editorialId": 2,
+      "isbn": 9788415528008,
+      "numPages": 128,
+      "stateId": 1,
       "id": 2
     },
     {
-      "title": "Valle de la calma",
-      "date": "2018-04-02",
-      "authorId": 3,
-      "categoryId": 3,
-      "editorialId": 1,
-      "isbn": 273059,
-      "numPages": 296,
+      "title": "Crónica de una muerte anunciada",
+      "date": "1981-11-06",
+      "urlImg": "https://images.cdn2.buscalibre.com/fit-in/360x360/13/97/1397a4f28df5ed21f99177884f3276bd.jpg",
+      "authorId": 1,
+      "categoryId": 4,
+      "editorialId": 3,
+      "isbn": 9786070712858,
+      "numPages": 122,
       "stateId": 1,
       "id": 3
     },
     {
-      "title": "Prometeo encadenado",
-      "date": "2020-01-01",
-      "authorId": 4,
-      "categoryId": 2,
-      "editorialId": 1,
-      "isbn": 16758,
-      "numPages": 296,
-      "stateId": 3,
+      "title": "El cuervo",
+      "date": "1845-01-29",
+      "urlImg": "https://images.cdn3.buscalibre.com/fit-in/360x360/82/54/8254f97525fefd437779e36786312678.jpg",
+      "authorId": 2,
+      "categoryId": 1,
+      "editorialId": 2,
+      "isbn": 9788418008160,
+      "numPages": 72,
+      "stateId": 1,
       "id": 4
     },
     {
-      "title": "The End",
-      "date": "01-15-2023",
-      "authorId": 1,
-      "categoryId": 1,
-      "editorialId": 1,
-      "isbn": 456,
-      "numPages": 425,
-      "stateId": 4,
+      "title": "Green Eggs and Ham",
+      "date": "1960-08-12",
+      "urlImg": "https://www.lavanguardia.com/peliculas-series/images/movie/poster/1973/1/w1280/jdIjmIJni1a2MiLLTEcUuD0H6Ky.jpg",
+      "authorId": 4,
+      "categoryId": 9,
+      "editorialId": 4,
+      "isbn": 9780394800165,
+      "numPages": 72,
+      "stateId": 1,
       "id": 5
+    },
+    {
+      "title": "El simbolo Perdido",
+      "date": "2000-07-08",
+      "urlImg": "https://images.cdn3.buscalibre.com/fit-in/360x360/2b/24/2b24851d640c374d4290f8d320ef5e8c.jpg",
+      "authorId": 6,
+      "categoryId": 2,
+      "editorialId": 6,
+      "isbn": 9780385504225 ,
+      "numPages": 784,
+      "stateId": 1,
+      "id": 6
+    },
+    {
+      "title": "Harry potter y caliz de fuego",
+      "date": "2009-09-15",
+      "urlImg": "https://images.cdn1.buscalibre.com/fit-in/360x360/b9/ad/b9ad65b059dd5acc7ec5e7467b1343b9.jpg",
+      "authorId": 5,
+      "categoryId": 5,
+      "editorialId": 2,
+      "isbn": 9789585234079 ,
+      "numPages": 636,
+      "stateId": 2,
+      "id": 7
+    },
+    {
+      "title": "El gato negro",
+      "date": "1843-08-19",
+      "urlImg": "https://covers.alibrate.com/b/59872e93cba2bce50c1b9847/92039008-89a9-496f-8bd1-f15afa1921bc/share",
+      "authorId": 2,
+      "categoryId": 9,
+      "editorialId": 2,
+      "isbn": 9788466705660 ,
+      "numPages": 224,
+      "stateId": 2,
+      "id": 7
+    },
+    {
+      "title": "Origen",
+      "date": "2017-10-03",
+      "urlImg": "https://images.cdn2.buscalibre.com/fit-in/360x360/0d/15/0d154ff139951486c485a9c0efa0e58c.jpg",
+      "authorId": 6,
+      "categoryId": 8,
+      "editorialId": 2,
+      "isbn": 9788408177081 ,
+      "numPages": 487,
+      "stateId": 2,
+      "id": 8
     }
   ],
   "loads": [],
   "reservations": [],
   "authors": [
     {
-      "name": "Miguel",
-      "lastname": "Castro",
-      "nationality": "Europeo",
+      "name": "Gabriel",
+      "lastname": "Garcia",
+      "nationality": "Colombiano",
+      "urlImg": "https://www.parlamentoandino.org/images/centro-de-documentacion/6Gabriel-Garca-Mrquez.png",
       "id": 1
     },
     {
-      "name": "Santiago",
-      "lastname": "Marquez",
-      "nationality": "Venezolano",
+      "name": "Edgar",
+      "lastname": "Allan Poe",
+      "nationality": "Estadounidense",
+      "urlImg": "https://th-thumbnailer.cdn-si-edu.com/9Rd7mA636RcNYQqWZE6GIjf40Ts=/fit-in/1600x0/filters:focal(1096x852:1097x853)/https://tf-cmsv2-smithsonianmag-media.s3.amazonaws.com/filer/c0/b4/c0b41ae2-b449-4157-a874-34f78c0279ee/poe-portrait.jpg",
       "id": 2
     },
     {
-      "name": "Kevin",
-      "lastname": "Esteba",
-      "nationality": "Japones",
-      "id": 3
+      "name": "Dr.",
+      "lastname": "Seuss",
+      "nationality": "Estadounidense",
+      "urlImg": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Theodor_Seuss_Geisel_%2801037v%29.jpg/640px-Theodor_Seuss_Geisel_%2801037v%29.jpg",
+      "id": 4
     },
     {
-      "name": "Cristian",
-      "lastname": "Pardo",
-      "nationality": "Italiano",
-      "id": 4
+      "name": "Joanne",
+      "lastname": "Rowling",
+      "nationality": "Inglaterra",
+      "urlImg": "https://article-imgs.scribdassets.com/5rxvjrrh8g99bri7/images/fileH85WZNA9.jpg",
+      "id": 5
+    },
+    {
+      "name": "Daniel",
+      "lastname": "Brown",
+      "nationality": "Estadounidense",
+      "urlImg": "https://play-lh.googleusercontent.com/_-PTjFD-mdkPW5XXOAMLetTSlw58BX1tYVYLhxXB_besp_MRBAYAIOpx7s3q5QKDYg=w3840-h2160-rw",
+      "id": 6
     }
   ],
   "users": []

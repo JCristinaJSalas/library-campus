@@ -1,4 +1,8 @@
 import { isObject, objectBooks } from "./validations.js";
+const config = {
+  method: undefined,
+  headers: { "Content-Type": "application/json" },
+};
 
 export const getAllBooks = async (urlBooks) => {
   const dataBooksJson = await (await fetch(urlBooks)).json();
@@ -66,3 +70,28 @@ export const deleteBook = async (urlBooks, id) => {
     console.error(error);
   }
 };
+
+//----------------**--------------------
+//-----------Mostrar Libros-------------
+
+const contenedorLibros = document.querySelector('.contenedorLibros')
+
+export const mostrarLibros = async(urlBooks) => {
+  const libros = await getAllBooks(urlBooks)
+  libros.map((libro) => {
+    contenedorLibros.insertAdjacentHTML("beforeend",`
+      <div class="contenedorLibro">
+      <img
+        class="img-card"
+        src="${libro.urlImg}"
+        alt="${libro.title}"
+      />
+      <div class="bio">
+        <h3>${libro.title}</h3>
+        <h5>${libro.stateId}</h5>
+      </div>
+    </div>
+    `)
+  }) 
+  //console.log(libros)
+}
