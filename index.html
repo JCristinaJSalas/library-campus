@@ -1,13 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/boxicons@latest/css/boxicons.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
     <script src="/main.js" defer type="module"></script>
     <title>Document</title>
-</head>
-<body>
-    Hola
-</body>
+  </head>
+  <body>
+    <nav>
+      <div class="contenedor-logo">
+        <i class="bx bx-library icon"></i>
+        <h1>Library</h1>
+      </div>
+      <ul>
+        <li>
+          <a href="#"><i class="bx bx-home"></i>Home</a>
+        </li>
+        <li>
+          <a href="#"><i class="bx bx-book-reader"></i>Categories</a>
+        </li>
+        <li>
+          <a href="#"><i class="bx bx-pen"></i>Authors</a>
+        </li>
+        <li>
+          <a href="#"><i class="bx bx-building-house"></i>Editorials</a>
+        </li>
+      </ul>
+    </nav>
+    <section id="contenedorTodo">
+      <div class="contenedorHero">
+        <div class="contenedorBusqueda">
+          <label for="busqueda"><i class="bx bx-search-alt-2 icon"></i></label>
+          <input
+            type="text"
+            name="busqueda"
+            id="busqueda"
+            placeholder="Busca tu libro.."
+          />
+        </div>
+        <div class="contenedorLibros">
+<!--           <div class="contenedorLibro">
+            <img
+              class="img-card"
+              src="https://i.pinimg.com/564x/76/1d/ac/761dace2ca42c25e798f2a702ed717b0.jpg"
+              alt="nino"
+              width="150px"
+            />
+            <div class="bio">
+              <h3>The snowgvfdfgfghfghfggfhfhfghfhirl</h3>
+              <h5>2013/25/04</h5>
+            </div>
+          </div>
+          <div class="contenedorLibro">
+            <img
+              class="img-card"
+              src="https://i.pinimg.com/564x/76/1d/ac/761dace2ca42c25e798f2a702ed717b0.jpg"
+              alt="nino"
+              width="150px"
+            />
+            <div class="bio">
+              <h3>The snowgirl</h3>
+              <h5>2013/25/04</h5>
+            </div>
+          </div>
+          <div class="contenedorLibro">
+            <img
+              class="img-card"
+              src="https://i.pinimg.com/564x/76/1d/ac/761dace2ca42c25e798f2a702ed717b0.jpg"
+              alt="nino"
+              width="150px"
+            />
+            <div class="bio">
+              <h3>The snowgirl</h3>
+              <h5>2013/25/04</h5>
+            </div>
+          </div>
+          <div class="contenedorLibro">
+            <img
+              class="img-card"
+              src="https://i.pinimg.com/564x/76/1d/ac/761dace2ca42c25e798f2a702ed717b0.jpg"
+              alt="nino"
+              width="150px"
+            />
+            <div class="bio">
+              <h3>The snowgirl</h3>
+              <h5>2013/25/04</h5>
+            </div>
+          </div>
+          <div class="contenedorLibro">
+            <img
+              class="img-card"
+              src="https://i.pinimg.com/564x/76/1d/ac/761dace2ca42c25e798f2a702ed717b0.jpg"
+              alt="nino"
+              width="150px"
+            />
+            <div class="bio">
+              <h3>The snowgirl</h3>
+              <h5>2013/25/04</h5>
+            </div>
+          </div>
+          <div class="contenedorLibro">
+            <img
+              class="img-card"
+              src="https://i.pinimg.com/564x/76/1d/ac/761dace2ca42c25e798f2a702ed717b0.jpg"
+              alt="nino"
+              width="150px"
+            />
+            <div class="bio">
+              <h3>The snowgirl</h3>
+              <h5>2013/25/04</h5>
+            </div>
+          </div>
+          <div class="contenedorLibro">
+            <img
+              class="img-card"
+              src="https://i.pinimg.com/564x/76/1d/ac/761dace2ca42c25e798f2a702ed717b0.jpg"
+              alt="nino"
+              width="150px"
+            />
+            <div class="bio">
+              <h3>The snowgirl</h3>
+              <h5>2013/25/04</h5>
+            </div>
+          </div>
+          <div class="contenedorLibro">
+            <img
+              class="img-card"
+              src="https://i.pinimg.com/564x/76/1d/ac/761dace2ca42c25e798f2a702ed717b0.jpg"
+              alt="nino"
+              width="150px"
+            />
+            <div class="bio">
+              <h3>The snowgirl</h3>
+              <h5>2013/25/04</h5>
+            </div>
+          </div>
+          <div class="contenedorLibro">
+            <img
+              class="img-card"
+              src="https://i.pinimg.com/564x/76/1d/ac/761dace2ca42c25e798f2a702ed717b0.jpg"
+              alt="nino"
+              width="150px"
+            />
+            <div class="bio">
+              <h3>The snowgirl</h3>
+              <h5>2013/25/04</h5>
+            </div>
+          </div> -->
+        </div>
+        <div class="contenedorInformacion">
+          <div class="contenedorAutores">
+            <h4>Autores</h4>
+            <div class="contenedorAutoresInfo">
+<!--               <div class="contenedorAutor">
+                <div class="contenedorImg">
+                  <img
+                    src="https://article-imgs.scribdassets.com/5rxvjrrh8g99bri7/images/fileH85WZNA9.jpg"
+                    alt="Autora"
+                  />
+                </div>
+                <div class="contenedorInfoAutor">
+                  <h2>Joanne Rowling</h2>
+                  <h5>Estadounidense</h5>
+                </div>
+              </div>
+              <div class="contenedorAutor">
+                <div class="contenedorImg">
+                  <img
+                    src="https://article-imgs.scribdassets.com/5rxvjrrh8g99bri7/images/fileH85WZNA9.jpg"
+                    alt="Autora"
+                  />
+                </div>
+                <div class="contenedorInfoAutor">
+                  <h2>Joanne Rowling</h2>
+                  <h5>Estadounidense</h5>
+                </div>
+              </div>
+              <div class="contenedorAutor">
+                <div class="contenedorImg">
+                  <img
+                    src="https://article-imgs.scribdassets.com/5rxvjrrh8g99bri7/images/fileH85WZNA9.jpg"
+                    alt="Autora"
+                  />
+                </div>
+                <div class="contenedorInfoAutor">
+                  <h2>Joanne Rowling</h2>
+                  <h5>Estadounidense</h5>
+                </div>
+              </div>
+              <div class="contenedorAutor">
+                <div class="contenedorImg">
+                  <img
+                    src="https://article-imgs.scribdassets.com/5rxvjrrh8g99bri7/images/fileH85WZNA9.jpg"
+                    alt="Autora"
+                  />
+                </div>
+                <div class="contenedorInfoAutor">
+                  <h2>Joanne Rowling</h2>
+                  <h5>Estadounidense</h5>
+                </div>
+              </div> -->
+            </div>
+          </div>
+          <div class="contenedorCategorias">
+            <h4>Categorias</h4>
+            <div class="contenedorCategoriasInfo">
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer>
+      <h4>Copyright © 2023 Cristina Salas. Todos los derechos reservados.</h4>
+    </footer>
+  </body>
 </html>
