@@ -1,3 +1,6 @@
+import { getAllAuthors } from "./author.js";
+import { getAllCategories } from "./category.js";
+import { getAllEditorials } from "./editorials.js";
 import { isObject, objectBooks } from "./validations.js";
 const config = {
   method: undefined,
@@ -72,14 +75,16 @@ export const deleteBook = async (urlBooks, id) => {
 };
 
 //----------------**--------------------
-//-----------Mostrar Libros-------------
+//-----------Mostrar Libros   HOME PAGE-------------
 
-const contenedorLibros = document.querySelector('.contenedorLibros')
+const contenedorLibros = document.querySelector(".contenedorLibros");
 
-export const mostrarLibros = async(urlBooks) => {
-  const libros = await getAllBooks(urlBooks)
+export const mostrarLibros = async (urlBooks) => {
+  const libros = await getAllBooks(urlBooks);
   libros.map((libro) => {
-    contenedorLibros.insertAdjacentHTML("beforeend",`
+    contenedorLibros.insertAdjacentHTML(
+      "beforeend",
+      `
       <div class="contenedorLibro">
       <img
         class="img-card"
@@ -91,7 +96,34 @@ export const mostrarLibros = async(urlBooks) => {
         <h5>${libro.stateId}</h5>
       </div>
     </div>
-    `)
-  }) 
-  //console.log(libros)
-}
+    `
+    );
+  });
+};
+const modalCat = document.querySelector(".selectCat");
+const modalAu = document.querySelector(".selectAutor");
+const modalEdi = document.querySelector(".selectEditorial");
+
+export const addLibro = async (urlCategories,urlAuthor,urlEditorial) => {
+
+  const cat = await getAllCategories(urlCategories);
+  cat.map((c) => {
+    modalCat.insertAdjacentHTML("beforeend",`
+    <option value="${c.id}">${c.name}</option>
+    `)})
+
+  const autores = await getAllAuthors(urlAuthor)
+  autores.map((a) => {
+    modalAu.insertAdjacentHTML("beforeend",`
+    <option value="${a.id}">${a.name} ${a.lastname}</option>
+    `)})
+
+    const editorial = await getAllEditorials(urlEditorial)
+    editorial.map((e) => {
+      modalEdi.insertAdjacentHTML("beforeend",`
+      <option value="${e.id}">${e.name}</option>
+      `)})
+  };
+
+  
+ 

@@ -69,22 +69,34 @@ export const deleteAuthor = async (urlAuthors, id) => {
   }
 };
 
+const contenedorAutoresInfo = document.querySelector(".contenedorAutoresInfo");
+export const mostrarAutores = async (urlAuthor) => {
+  const autores = await getAllAuthors(urlAuthor);
 
-const contenedorAutoresInfo = document.querySelector(".contenedorAutoresInfo")
-export const mostrarAutores = async(urlAuthor) => {
-  const autores = await getAllAuthors(urlAuthor)
-  autores.map((categoria) => {
-    contenedorAutoresInfo.insertAdjacentHTML("beforeend",`
+  autores.map((autor) => {
+    const contenedor = document.createElement("div");
+    contenedor.classList.add = "contenedorAutor";
+    contenedor.innerHTML = `
     <div class="contenedorAutor">
       <div class="contenedorImg">
-       <img src="${categoria.urlImg}" alt="${categoria.name}"/>
+       <img src="${autor.urlImg}" alt="${autor.name}"/>
       </div>
       <div class="contenedorInfoAutor">
-        <h2>${categoria.name} ${categoria.lastname}</h2>
-        <h5>${categoria.nationality}</h5>
+        <h2>${autor.name} ${autor.lastname}</h2>
+        <h5>${autor.nationality}</h5>
        </div>
     </div>
-    `
-    )
-  })
-}
+    `;
+    contenedorAutoresInfo.appendChild(contenedor);
+  });
+};
+
+const btnAutorAdd = document.querySelector('.btn-autor-add')
+const cerrarAutor = document.querySelector('#cerrarAutores')
+const modalAutor = document.querySelector('.modalAutor')
+btnAutorAdd.addEventListener("click",() => {
+  modalAutor.classList.add('modalShow')
+})
+cerrarAutor.addEventListener("click",() => {
+  modalAutor.classList.remove('modalShow')
+})

@@ -8,7 +8,7 @@ export const getAllCategories = async (urlCategories) => {
   const dataCategoriesJson = await (await fetch(urlCategories)).json();
   return dataCategoriesJson.map((category) => {
     if (isObject(category)) return objectCategories(category);
- });
+  });
 };
 
 export const getOneCategory = async (urlCategories, id) => {
@@ -69,16 +69,31 @@ export const deleteCategory = async (urlCategories, id) => {
   }
 };
 
-const contenedorCategoriasInfo = document.querySelector(".contenedorCategoriasInfo")
+const contenedorCategoriasInfo = document.querySelector(
+  ".contenedorCategoriasInfo"
+);
 
-export const mostrarCategoria = async(urlCategories) => {
-  const categorias = await getAllCategories(urlCategories)
+export const mostrarCategoria = async (urlCategories) => {
+  const categorias = await getAllCategories(urlCategories);
   categorias.map((categoria) => {
-    contenedorCategoriasInfo.insertAdjacentHTML("beforeend",`
+    contenedorCategoriasInfo.insertAdjacentHTML(
+      "beforeend",
+      `
     <div class="contenedorCategoria">
     <img src='${categoria.icon}' alt="${categoria.name}" width="100px"/>
     <h3>${categoria.name}</h3>
   </div>
-    `)
-  })
-}
+    `
+    );
+  });
+};
+
+const btnCategoriaAdd = document.querySelector(".btn-categoria-add");
+const cerrarCategoria = document.querySelector("#cerrarCategoria");
+const modalCategoria = document.querySelector(".modalCategoria");
+btnCategoriaAdd.addEventListener("click", () => {
+  modalCategoria.classList.add("modalShow");
+});
+cerrarCategoria.addEventListener("click", () => {
+  modalCategoria.classList.remove("modalShow");
+});

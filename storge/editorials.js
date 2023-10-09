@@ -66,3 +66,15 @@ export const deleteEdiorial = async (urlEditorials, id) => {
     console.error(error);
   }
 };
+
+
+const btnEditorialAdd = document.querySelector('.btn-editorial-add')
+const cerrarEditorial = document.querySelector('#cerrarEditorial')
+const modalEditorial = document.querySelector('.modalEditorial')
+btnEditorialAdd.addEventListener("click",() => {
+  console.log('click')
+  modalEditorial.classList.add('modalShow')
+})
+cerrarEditorial.addEventListener("click",() => {
+  modalEditorial.classList.remove('modalShow')
+})

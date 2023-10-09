@@ -28,7 +28,7 @@ body {
   height: 100vh;
   max-height: 100vh;
   display: grid;
-  grid-template-columns: 265px 1fr;
+  grid-template-columns: 300px 1fr;
   grid-template-areas: 1fr 200px;
   grid-template-areas:
     "nav contenido"
@@ -44,7 +44,7 @@ nav {
   background-color: #ffffff2f;
   padding: 5% 20px;
   text-align: center;
-  max-width: 250px;
+  max-width: 450px;
   max-height: 100%;
 }
 .contenedor-logo {
@@ -65,36 +65,59 @@ nav ul {
 }
 nav li {
   font-size: 1.2rem;
-  width: 90%;
+  width: 100%;
   background-color: #ffffff4d;
   box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: flex-end;
   border-radius: 20px;
   margin: 20px 0;
+  gap: 3px;
+  font-size: 0.8rem;
 }
 nav li:hover {
   box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.35);
 }
-nav a {
+nav button {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px;
+
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 20px;
+  margin: 4px;
 }
 nav i {
-  width: 50px;
-  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 2rem;
+  font-size: 1.5rem;
   margin: 3px;
   padding: 10px;
   border-radius: 50%;
 }
 
+.btn-libro-add:hover,
+.btn-categoria-add:hover,
+.btn-autor-add:hover,
+.btn-editorial-add:hover {
+  box-shadow: 1px 2px 5px 0px #58b645d3;
+}
+.btn-libro-edit:hover,
+.btn-categoria-edit:hover,
+.btn-autor-edit:hover,
+.btn-editorial-edit:hover {
+  box-shadow: 1px 2px 5px 0px #3d4ee9d3;
+}
+.btn-libro-delete:hover,
+.btn-categoria-delete:hover,
+.btn-autor-delete:hover,
+.btn-editorial-delete:hover {
+  box-shadow: 1px 2px 5px 0px #dd0909d3;
+}
 /*--------> Main*/
 #contenedorTodo {
   grid-area: contenido;
@@ -102,11 +125,10 @@ nav i {
   padding: 5px 20px;
   height: 90vh;
   max-height: 90vh;
-  flex-grow: 2;
+  flex-grow: 3;
   overflow: hidden;
   background-color: #ffffff18;
-  overflow-y: scroll;
-  overflow-x: hidden;
+  overflow: auto;
   scroll-behavior: smooth;
 }
 .contenedorHero {
@@ -156,8 +178,8 @@ nav i {
 }
 /*--------> carta libros */
 .contenedorLibros {
-  min-height: 350px;
-  max-height: 400px;
+  min-height: 300px;
+  max-height: 350px;
   width: 100%;
   margin: auto;
   padding: 25px 5px;
@@ -171,8 +193,9 @@ nav i {
 }
 .contenedorLibro {
   background-color: transparent;
-  height: auto;
-  min-width: 230px;
+  height: 290px;
+  min-width: 200px;
+  width: 230px;
   max-width: 500px;
   position: relative;
   border-radius: 15px;
@@ -208,7 +231,7 @@ nav i {
   transition: 0.5s all ease;
   background-color: #000000;
 }
-.contenedorLibro h3{
+.contenedorLibro h3 {
   font-size: 1rem;
   font-family: inherit;
   overflow: hidden;
@@ -216,7 +239,7 @@ nav i {
 }
 /*--------> Contenedor Informacion*/
 
-.contenedorInformacion{
+.contenedorInformacion {
   width: 100%;
   height: auto;
   margin: auto;
@@ -224,7 +247,7 @@ nav i {
   flex-grow: 2;
 }
 /*--------> Contenedor Autores*/
-.contenedorAutores{
+.contenedorAutores {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -232,26 +255,26 @@ nav i {
   width: 50%;
   padding: 15px 0 0 0;
 }
-.contenedorAutores h4{
+.contenedorAutores h4 {
   width: 100%;
   height: 35px;
   text-align: center;
   padding: 5px 0;
   font-size: 1.2rem;
 }
-.contenedorAutoresInfo{
+.contenedorAutoresInfo {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
   max-width: 100%;
-  height:150px;
+  height: 150px;
   flex-grow: 1;
   padding: 15px 0 0 0;
-  gap:  5px 10px ;
+  gap: 5px 10px;
 }
-.contenedorAutor{
+.contenedorAutor {
   background-color: #ffffff8c;
   box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.4);
   width: 130px;
@@ -261,7 +284,7 @@ nav i {
   border-radius: 20px;
   position: relative;
 }
-.contenedorImg{
+.contenedorImg {
   width: 80px;
   height: 80px;
   position: absolute;
@@ -271,63 +294,63 @@ nav i {
   border-radius: 50%;
   overflow: hidden;
 }
-.contenedorImg img{
+.contenedorImg img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-.contenedorInfoAutor{
+.contenedorInfoAutor {
   width: 100%;
   text-align: center;
   margin-top: 40%;
 }
-.contenedorInfoAutor h2{
+.contenedorInfoAutor h2 {
   font-size: 1rem;
   font-family: inherit;
 }
-.contenedorInfoAutor h5{
+.contenedorInfoAutor h5 {
   font-size: 0.7rem;
   font-family: inherit;
 }
 
 /*--------> Contenedor Categorias*/
 
-.contenedorCategorias{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    width: 50%;
-    padding: 15px 0 0 0;
+.contenedorCategorias {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 50%;
+  padding: 15px 0 0 0;
 }
 
-.contenedorCategoriasInfo{
+.contenedorCategoriasInfo {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
   width: 100%;
   max-width: 100%;
-  height:150px;
+  height: 150px;
   flex-grow: 1;
   padding: 15px;
   margin-top: 20px;
-  gap: 30px 10px ;
+  gap: 30px 10px;
 }
-.contenedorCategoria{
+.contenedorCategoria {
   width: 120px;
   height: 120px;
   text-align: center;
   padding: 10px;
 }
-.contenedorCategoria img{
+.contenedorCategoria img {
   font-size: 2.5rem;
   width: 70%;
   height: 70%;
   filter: drop-shadow(0 5px 5px rgba(0, 0, 0, 0.8));
 }
 
-.contenedorCategoria:hover{
+.contenedorCategoria:hover {
   box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.5);
   border-radius: 15px;
 }
@@ -336,7 +359,103 @@ footer {
   grid-area: footer;
   width: 98%;
   margin: 0 auto;
-  max-height: 10%;
+  height: 50px;
   flex-grow: 1;
   text-align: center;
+}
+
+/*----------------------------------> Pagina Libros*/
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #111111bb;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+}
+.modalShow {
+  opacity: 1;
+  pointer-events: unset;
+}
+
+.contenedorFormularioLibros {
+  background-color: #f7f6f6;
+  min-width: 350px;
+  min-height: 250px;
+  max-width: 650px;
+  max-height: 650px;
+  border-radius: 25px;
+  padding: 20px 30px 0;
+  text-align: center;
+}
+.contenedorFormularioLibros h3 {
+  font-size: 1.7rem;
+  margin: 0 5px;
+}
+.formularioLibros {
+  width: 100%;
+  height: 90%;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.contenedorInput {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  width: 100%;
+  padding: 3px;
+  margin: 10px;
+}
+.contenedorInput label {
+  font-size: 1rem;
+  font-weight: 600;
+}
+.contenedorInput input, .contenedorInput select{
+  font-size: 1rem;
+  font-weight: 600;
+  width: 60%;
+  border: 0.3px solid #0000003f;
+  height: 90%;
+  padding: 5px;
+  border-radius: 7px;
+  margin-left: 15px;
+  font-family: inherit;
+}
+.boton {
+  background-color: #94da86;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.4);
+  font-size: 1rem;
+  font-weight: 500;
+}
+.boton:hover {
+  background-color: #73cf61;
+  border: none;
+  box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.1);
+}
+.botonCerrar {
+  background-color: #df6676;
+  padding: 10px;
+  width: 50px;
+  border: none;
+  border-radius: 10px;
+  margin: 10px;
+  box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.4);
+  color: #fff;
+}
+.botonCerrar:hover {
+  background-color: #e7465b;
+  border: none;
+  box-shadow: 1px 2px 5px 0px rgba(0, 0, 0, 0.1);
 }
