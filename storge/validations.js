@@ -205,6 +205,11 @@ export const objectAuthors = (dataObject) => {
         ? (objectNew[data[0]] = data[1])
         : false
       : "";
+      data[0] === "id"
+      ? isNumber(data[1])
+        ? (objectNew[data[0]] = data[1])
+        : false
+      : "";
 
   });
   const keys = Object.keys(objectNew);
@@ -220,7 +225,7 @@ export const objectAuthors = (dataObject) => {
 
 export const objectEditorials = (dataObject) => {
   const objectNew = {};
-  const keyBook = ["name", "address", "phoneNumber"];
+  const keyBook = ["name", "address", "phoneNumber","id"];
   Object.entries(dataObject).map((data) => {
     data[0] === "name"
       ? isString(data[1])
@@ -234,6 +239,11 @@ export const objectEditorials = (dataObject) => {
       : "";
     data[0] === "phoneNumber"
       ? isString(data[1])
+        ? (objectNew[data[0]] = data[1])
+        : false
+      : "";
+      data[0] === "id"
+      ? isNumber(data[1])
         ? (objectNew[data[0]] = data[1])
         : false
       : "";

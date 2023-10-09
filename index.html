@@ -23,12 +23,6 @@
           <button class="btn-libro-add">
             <i class="bx bx-plus" style="color: #58b645"></i>
           </button>
-          <button class="btn-libro-edit">
-            <i class="bx bxs-edit-alt" style="color: #3d4ee9"></i>
-          </button>
-          <button class="btn-libro-delete">
-            <i class="bx bxs-trash" style="color: #dd0909"></i>
-          </button>
         </li>
         <li>
           <i class="bx bx-book-reader"></i>Categorias
@@ -96,7 +90,7 @@
     <section id="modalLibro " class="modal modalLibros">
       <div class="contenedorFormularioLibros">
         <h3>Agrega Libros</h3>
-        <form class="formularioLibros" id="libros">
+        <form class="formularioLibros" id="formularioLibrosAdd">
           <div class="contenedorInput">
             <label for="title">Titulo: </label>
             <input type="text" name="title" id="title" required />
@@ -115,19 +109,19 @@
           </div>
           <div class="contenedorInput categoria">
             <label for="category">Categoria: </label>
-            <select name="select" class="selectCat">
+            <select name="category" class="selectCat" required>
             </select>
             
           </div>
           <div class="contenedorInput categoria">
-            <label for="category">Autor: </label>
-            <select name="select" class="selectAutor">
+            <label for="author">Autor: </label>
+            <select name="author" class="selectAutor" required>
             </select>
             
           </div>
           <div class="contenedorInput">
             <label for="editorial">Editorial: </label>
-            <select name="select" class="selectEditorial">
+            <select name="editorial" class="selectEditorial" required>
             </select>
           </div>
           <div class="contenedorInput">
@@ -136,7 +130,8 @@
           </div>
           <div class="contenedorInput">
             <label for="state">Estado: </label>
-            <input type="number" name="state" id="state" required />
+            <select name="state" class="selectEstado" required>
+            </select>
           </div>
           <div class="contenedorBotomnes">
             <input type="submit" value="GUARDAR" class="boton" />

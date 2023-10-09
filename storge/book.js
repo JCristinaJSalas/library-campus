@@ -1,6 +1,7 @@
 import { getAllAuthors } from "./author.js";
 import { getAllCategories } from "./category.js";
 import { getAllEditorials } from "./editorials.js";
+import { getAllStates } from "./states.js";
 import { isObject, objectBooks } from "./validations.js";
 const config = {
   method: undefined,
@@ -94,6 +95,12 @@ export const mostrarLibros = async (urlBooks) => {
       <div class="bio">
         <h3>${libro.title}</h3>
         <h5>${libro.stateId}</h5>
+        <button class="btn-libro-edit">
+            <i class="bx bxs-edit-alt" style="color: #3d4ee9"></i>
+          </button>
+          <button class="btn-libro-delete">
+            <i class="bx bxs-trash" style="color: #dd0909"></i>
+          </button>
       </div>
     </div>
     `
@@ -103,27 +110,60 @@ export const mostrarLibros = async (urlBooks) => {
 const modalCat = document.querySelector(".selectCat");
 const modalAu = document.querySelector(".selectAutor");
 const modalEdi = document.querySelector(".selectEditorial");
+const modalEst = document.querySelector(".selectEstado");
 
-export const addLibro = async (urlCategories,urlAuthor,urlEditorial) => {
-
+export const addLibro = async (
+  urlCategories,
+  urlAuthor,
+  urlEditorial,
+  urlStates
+) => {
   const cat = await getAllCategories(urlCategories);
   cat.map((c) => {
-    modalCat.insertAdjacentHTML("beforeend",`
+    modalCat.insertAdjacentHTML(
+      "beforeend",
+      `
     <option value="${c.id}">${c.name}</option>
-    `)})
+    `
+    );
+  });
 
-  const autores = await getAllAuthors(urlAuthor)
+  const autores = await getAllAuthors(urlAuthor);
   autores.map((a) => {
-    modalAu.insertAdjacentHTML("beforeend",`
+    modalAu.insertAdjacentHTML(
+      "beforeend",
+      `
     <option value="${a.id}">${a.name} ${a.lastname}</option>
-    `)})
+    `
+    );
+  });
 
-    const editorial = await getAllEditorials(urlEditorial)
-    editorial.map((e) => {
-      modalEdi.insertAdjacentHTML("beforeend",`
-      <option value="${e.id}">${e.name}</option>
-      `)})
-  };
+  const editorial = await getAllEditorials(urlEditorial);
+  editorial.map((e) => {
+    console.log(e)
+    modalEdi.insertAdjacentHTML(
+      "beforeend",
+      `
+      <option value="${e.name}">${e.id}</option>
+      `
+    );
+  });
+  const estado = await getAllStates(urlStates);
+  estado.map((e) => {
+    modalEst.insertAdjacentHTML(
+      "beforeend",
+      `
+        <option value="${e.id}">${e.name}</option>
+        `
+    );
+  });
 
-  
- 
+
+};
+
+
+document.getElementById("formularioLibrosAdd").addEventListener("submit",(e) => {
+    e.preventDefault()
+    const datosLibros = Object.fromEntries(new FormData(e.target))
+    console.log(datosLibros)
+  })

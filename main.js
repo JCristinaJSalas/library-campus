@@ -12,6 +12,7 @@ const urlBooks = url + "/books";
 const urlCategories = url + "/categories";
 const urlAuthor = url + "/authors";
 const urlEditorial = url + "/editorials";
+const urlStates = url + "/states";
 
 document.addEventListener("DOMContentLoaded", async () => {
   await mostrarLibros(urlBooks);
@@ -30,7 +31,7 @@ const cerrarLibros = document.querySelector('#cerrarLibros')
 const modalLibro = document.querySelector('.modalLibros')
 btnlibroadd.addEventListener("click",async() => {
   modalLibro.classList.add('modalShow')
-  await addLibro(urlCategories,urlAuthor,urlEditorial)
+  await addLibro(urlCategories,urlAuthor,urlEditorial,urlStates)
 
 })
 cerrarLibros.addEventListener("click",() => {

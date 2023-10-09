@@ -44,9 +44,9 @@
   "editorials": [
     {
       "name": "Editorial Sudamericana",
+      "id": 1,
       "address": "Humberto Primo 555, (1103) CABA",
-      "phoneNumber": "5235-4400",
-      "id": 1
+      "phoneNumber": "5235-4400"
     },
     {
       "name": "Graham's Magazine",
@@ -106,7 +106,7 @@
       "title": "Harry Potter y la piedra filosofal ",
       "date": "1997-06-26",
       "urlImg": "https://images.cdn3.buscalibre.com/fit-in/360x360/ce/e6/cee6ef96dad70d3f599b953f0e50afc7.jpg",
-      "authorId": 5,
+      "authorId": 19999,
       "categoryId": 4,
       "editorialId": 2,
       "isbn": 9788498382662,
